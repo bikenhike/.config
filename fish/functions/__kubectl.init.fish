@@ -76,6 +76,27 @@ function __kubectl.init
   __kubectl.create_abbr kdi       kubectl describe ingress
   __kubectl.create_abbr kdeli     kubectl delete ingress
 
+  # HTTPRoute management
+  __kubectl.create_abbr kgh       kubectl get httproute
+  __kubectl.create_abbr kgha      kubectl get httproute --all-namespaces
+  __kubectl.create_abbr keh       kubectl edit httproute
+  __kubectl.create_abbr kdh       kubectl describe httproute
+  __kubectl.create_abbr kdelh     kubectl delete httproute
+
+  # GRPCRoute management
+  __kubectl.create_abbr kgg       kubectl get grpcroute
+  __kubectl.create_abbr kgga      kubectl get grpcroute --all-namespaces
+  __kubectl.create_abbr keg       kubectl edit grpcroute
+  __kubectl.create_abbr kdg       kubectl describe grpcroute
+  __kubectl.create_abbr kdelg     kubectl delete grpcroute
+
+  # ReferenceGrant management
+  __kubectl.create_abbr kgr       kubectl get referencegrant
+  __kubectl.create_abbr kgra      kubectl get referencegrant --all-namespaces
+  __kubectl.create_abbr ker       kubectl edit referencegrant
+  __kubectl.create_abbr kdr       kubectl describe referencegrant
+  __kubectl.create_abbr kdelr     kubectl delete referencegrant
+
   # Namespace management
   __kubectl.create_abbr kgns      kubectl get namespaces
   __kubectl.create_abbr kens      kubectl edit namespace
@@ -168,6 +189,28 @@ function __kubectl.init
   __kubectl.create_abbr keds      kubectl edit ds
   __kubectl.create_abbr kdds      kubectl describe ds
   __kubectl.create_abbr kdelds    kubectl delete ds
+
+  # CronJob management
+  __kubectl.create_abbr kgcj      kubectl get cronjob
+  __kubectl.create_abbr kgcja     kubectl get cronjob --all-namespaces
+  __kubectl.create_abbr kgcjw     kubectl get cronjob --watch
+  __kubectl.create_abbr kecj      kubectl edit cronjob
+  __kubectl.create_abbr kdcj      kubectl describe cronjob
+  __kubectl.create_abbr kdelcj    kubectl delete cronjob
+
+  # Job management
+  __kubectl.create_abbr kgj       kubectl get job
+  __kubectl.create_abbr kgja      kubectl get job --all-namespaces
+  __kubectl.create_abbr kgjw      kubectl get job --watch
+  __kubectl.create_abbr kcjj      kubectl create job --from=cronjob/
+  __kubectl.create_abbr kej       kubectl edit job
+  __kubectl.create_abbr kdj       kubectl describe job
+  __kubectl.create_abbr kdelj     kubectl delete job
+
+  # Events management
+  __kubectl.create_abbr kge      kubectl get events
+  __kubectl.create_abbr kgea     kubectl get events --all-namespaces
+  __kubectl.create_abbr kgew     kubectl get events --watch
 
   # Cleanup declared functions
   functions -e __kubectl.create_abbr
